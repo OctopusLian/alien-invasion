@@ -10,7 +10,7 @@ class Ship():
         self.ai_settings = ai_settings
 
         # 加载飞船图像并获取其外接矩形
-        self.image = pygame.image.load('images/ship.bmp')
+        self.image = pygame.image.load('./images/ship.bmp')
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
 
@@ -24,6 +24,10 @@ class Ship():
         # Movement flags.
         self.moving_right = False
         self.moving_left = False
+
+    def center_ship(self):
+        """Center the ship on the screen."""
+        self.center = self.screen_rect.centerx
         
     def update(self):
         """Update the ship's position, based on movement flags."""
